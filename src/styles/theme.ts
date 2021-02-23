@@ -1,6 +1,8 @@
 export default {
   border: {
     radius01: '4px',
+    radius02: '50%',
+    radius03: '5px'
   },
   media: {
     big: '1080px',
@@ -8,9 +10,15 @@ export default {
   },
   font: {
     family: 'Inter, sans-serif',
-    normal: 400,
+    light: 400,
+    normal: 500,
+    bold: 600,
     sizes: {
       normal: '1rem',
+      large: '1.25rem',
+      xlarge: '1.5rem',
+      xxlarge: '8.5rem',
+      xxxlarge: '6.25rem'
     },
   },
   colors: {

@@ -1,3 +1,22 @@
+import CompletedChallenges from "../components/CompletedChallenges";
+import Countdown from "../components/Countdown";
+import ExperienceBar from "../components/ExperienceBar";
+import Profile from "../components/Profile";
+
+import { Container } from "../styles/global";
+
 export default function Home() {
-  return <h1>Hello world</h1>;
+  return (
+    <Container>
+      <ExperienceBar />
+
+      <section>
+        <div>
+          <Profile />
+          <CompletedChallenges />
+          <Countdown />
+        </div>
+      </section>
+    </Container>
+  );
 }
