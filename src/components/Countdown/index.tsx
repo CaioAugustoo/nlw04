@@ -12,6 +12,9 @@ const Countdown = () => {
     secondsLeft,
     secondsRight,
     startCountdown,
+    resetCountdown,
+    isActive,
+    hasFinished,
   } = useCountdown();
 
   return (
@@ -28,7 +31,27 @@ const Countdown = () => {
         </div>
       </S.Wrapper>
 
-      <Button onClick={startCountdown}>Iniciar um ciclo</Button>
+      {hasFinished ? (
+        <Button disabled>Ciclo encerrado</Button>
+      ) : (
+        <>
+          {!isActive ? (
+            <Button
+              onClick={startCountdown}
+              className={isActive ? "active" : ""}
+            >
+              Iniciar um ciclo
+            </Button>
+          ) : (
+            <Button
+              onClick={resetCountdown}
+              className={isActive ? "active" : ""}
+            >
+              Abandonar ciclo
+            </Button>
+          )}
+        </>
+      )}
     </div>
   );
 };

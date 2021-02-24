@@ -3,12 +3,14 @@ import * as S from "./styles";
 
 export type ButtonProps = {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
 };
 
-const Button = ({ onClick, children, ...props }: ButtonProps) => {
+const Button = ({ onClick, children, disabled, ...props }: ButtonProps) => {
   return (
-    <S.Wrapper onClick={onClick} {...props}>
+    <S.Wrapper onClick={onClick} disabled={disabled} {...props}>
       {children}
     </S.Wrapper>
   );

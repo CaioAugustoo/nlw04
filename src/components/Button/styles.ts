@@ -13,7 +13,7 @@ export const Wrapper = styled.button`
     border: 0;
     border-radius: ${theme.border.radius03};
     outline: none;
-
+    
     background: ${theme.colors.blue};
     color: ${theme.colors.white};
 
@@ -23,8 +23,24 @@ export const Wrapper = styled.button`
     transition: background-color 0.2s;
     cursor: pointer;
 
-    &:hover {
+    &:not([disabled]):hover {
       background: ${theme.colors.blueDark};
+
+      &.active {
+        background-color: ${theme.colors.red};
+      color: ${theme.colors.white};
+      }
+    }
+
+    &.active {
+      background-color: ${theme.colors.white};
+      color: ${theme.colors.title};
+    }
+
+    &:disabled {
+      background-color: ${theme.colors.white};
+      color: ${theme.colors.text};
+      cursor: not-allowed;
     }
   `}
 `
