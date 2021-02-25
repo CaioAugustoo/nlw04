@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import useCountdown from "../../Hooks/useCountdown";
+import { CountDownContext } from "../../contexts/CountdownContext";
+
 import Button from "../Button";
 
 import * as S from "./styles";
 
 const Countdown = () => {
   const {
-    minuteLeft,
-    minuteRight,
-    secondsLeft,
-    secondsRight,
-    startCountdown,
+    minutes,
+    seconds,
     resetCountdown,
-    isActive,
     hasFinished,
-  } = useCountdown();
+    isActive,
+    startCountdown,
+  } = useContext(CountDownContext);
+
+  const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
+  const [secondsLeft, secondsRight] = String(seconds)
+    .padStart(2, "0")
+    .split("");
 
   return (
     <div>

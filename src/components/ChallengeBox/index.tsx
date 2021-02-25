@@ -1,12 +1,27 @@
 import React, { useContext } from "react";
 
 import { ChallengesContext } from "../../contexts/ChallengesContext";
+import { CountDownContext } from "../../contexts/CountdownContext";
 
 import Button from "../Button";
 import * as S from "./styles";
 
 const ChallengeBox = () => {
-  const { activeChallenge, resetChallenge } = useContext(ChallengesContext);
+  const { activeChallenge, resetChallenge, completeChallenge } = useContext(
+    ChallengesContext
+  );
+
+  const { resetCountdown } = useContext(CountDownContext);
+
+  const handleChallengeSucceded = () => {
+    completeChallenge();
+    resetCountdown();
+  };
+
+  const handleChallengeFailed = () => {
+    resetCountdown();
+    resetChallenge();
+  };
 
   return (
     <S.Wrapper>
@@ -21,8 +36,8 @@ const ChallengeBox = () => {
           </S.ChallengeAbout>
 
           <S.Actions>
-            <Button onClick={resetChallenge}>Falhei</Button>
-            <Button>Completei</Button>
+            <Button onClick={handleChallengeFailed}>Falhei</Button>
+            <Button onClick={handleChallengeSucceded}>Completei</Button>
           </S.Actions>
         </S.ChallengeActive>
       ) : (
