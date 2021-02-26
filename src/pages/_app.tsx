@@ -26,9 +26,7 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyles />
-      <ChallengesProvider>
-        <Component {...pageProps} />
-      </ChallengesProvider>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }
