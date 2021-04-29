@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "08:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.32
+    - 14.14.33
+    - 14.14.34
+    - 14.14.39
+    - 15.0.0
+  - dependency-name: "@types/react"
+    versions:
+    - 17.0.3
+    - 17.0.4
+  - dependency-name: styled-components
+    versions:
+    - 5.2.2
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.13.13
+    - 7.13.14
+  - dependency-name: "@types/babel__core"
+    versions:
+    - 7.1.13
+    - 7.1.14
+  - dependency-name: "@types/styled-components"
+    versions:
+    - 5.1.8
