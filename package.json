@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-typescript": "^7.14.5",
-    "@types/styled-components": "^5.1.9",
+    "@types/styled-components": "^5.1.12",
     "js-cookie": "^2.2.1",
     "next": "11.0.0",
     "react": "17.0.2",
